@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="car_rent.employeeController">
+   <children>
+         <TabPane fx:id="tabpane_reg" layoutX="3.0" layoutY="47.0" prefHeight="528.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+             <Tab fx:id="carInfoTab" text="车辆信息">
+             <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                 <children>
+                     <Button fx:id="logoutButton" layoutX="25.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="注销" />
+                     <Button fx:id="exitButton" layoutX="148.0" layoutY="425.0" prefHeight="30.0" prefWidth="78.0" text="退出" />
+                     <Button fx:id="deleteCarButton" layoutX="573.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="删除车辆" />
+                     <Button fx:id="addCarButton" layoutX="417.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="添加车辆" />
+                     <TextField fx:id="newCarLicense" layoutX="14.0" layoutY="365.0" prefHeight="30" prefWidth="100" promptText="车牌号" />
+                     <TextField fx:id="newCarBrand" layoutX="140.0" layoutY="365.0" prefHeight="30" prefWidth="120" promptText="汽车品牌" />
+                     <TextField fx:id="newCarRent" layoutX="431.0" layoutY="365.0" prefHeight="30" prefWidth="120" promptText="汽车租金" />
+                     <TextField fx:id="newCarYa" layoutX="573.0" layoutY="365.0" prefHeight="30" prefWidth="120" promptText="汽车押金" />
+                     <TableView fx:id="carInfoTable" editable="true" prefHeight="351.0" prefWidth="719.0">
+                         <columns>
+                             <TableColumn fx:id="carId" editable="true" prefWidth="100.0" text="车牌号" />
+                             <TableColumn fx:id="carBrand" editable="true" prefWidth="120.0" text="汽车品牌" />
+                             <TableColumn fx:id="carStatus" editable="true" prefWidth="100.0" text="汽车状态" />
+                             <TableColumn fx:id="carRent" editable="true" prefWidth="135.0" text="汽车租金" />
+                             <TableColumn fx:id="carYa" editable="true" prefWidth="140.0" text="汽车押金" />
+                             <TableColumn fx:id="carValid" editable="false" prefWidth="123.0" text="租借状态" />
+                         </columns>
+                     </TableView>
+                        <ChoiceBox fx:id="newCarStatus" layoutX="282.0" layoutY="365.0" prefHeight="30.0" prefWidth="135.0" value="综合车况很好">
+                            <items>
+                             <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="综合车况很好" />
+                                 <String fx:value="综合车况较好" />
+                                 <String fx:value="综合车况一般" />
+                                 <String fx:value="综合车况较差" />
+                                 <String fx:value="综合车况很差" />
+                            </FXCollections>
+                        </items>
+                        </ChoiceBox>
+                        <Label fx:id="statusLabel" layoutX="11.0" layoutY="461.0" text="&quot;&quot;" />
+                        <Button fx:id="modifyCarButton" layoutX="271.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="修改车辆信息" />
+                          </children>
+                 </AnchorPane>
+             </content>
+             </Tab>
+             <Tab fx:id="cusInfoTab" text="客户信息">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                     <children>
+                         <Button fx:id="logoutButton_2" layoutX="25.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="注销" />
+                         <Button fx:id="exitButton_2" layoutX="148.0" layoutY="425.0" prefHeight="30.0" prefWidth="78.0" text="退出" />
+                         <Button fx:id="deleteCusButton" layoutX="573.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="删除客户" />
+                         <Button fx:id="addCusButton" layoutX="417.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="添加新客户" />
+                         <TableView fx:id="cusInfoTable" editable="true" prefHeight="351.0" prefWidth="719.0">
+                             <columns>
+                                 <TableColumn fx:id="cusId" editable="true" prefWidth="89.0" text="客户账号" />
+                                 <TableColumn fx:id="cusName" editable="true" prefWidth="108.0" text="客户名称" />
+                                 <TableColumn fx:id="cusMember" editable="true" prefWidth="108.0" text="客户是否会员" />
+                                 <TableColumn fx:id="cusRedit" editable="true" prefWidth="146.0" text="客户信誉评级" />
+                              <TableColumn fx:id="cusPasswd" prefWidth="104.0" text="客户账号密码" />
+                              <TableColumn fx:id="cusLastLogin" prefWidth="163.0" text="客户最后登录日期" />
+                             </columns>
+                         </TableView>
+                         <TextField fx:id="newCusId" layoutX="13.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="新客户账号" />
+                         <TextField fx:id="newCusName" layoutX="191.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="新客户名称" />
+                        <TextField fx:id="newCusPasswd" layoutX="529.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="新客户密码" />
+                        <Label fx:id="statusLabel_2" layoutX="11.0" layoutY="461.0" text="&quot;&quot;" />
+                        <ChoiceBox fx:id="newCusMember" layoutX="377.0" layoutY="370.0" prefHeight="30.0" prefWidth="102.0" value="会员">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="会员" />
+                                    <String fx:value="非会员" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <Button fx:id="modifyCusButton" layoutX="271.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="修改客户信息" />
+                     </children>
+                     </AnchorPane>
+                 </content>
+             </Tab>
+             <Tab fx:id="empInfoTab" text="员工信息">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                         <children>
+                             <Button fx:id="logoutButton_3" layoutX="25.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="注销" />
+                             <Button fx:id="exitButton_3" layoutX="148.0" layoutY="425.0" prefHeight="30.0" prefWidth="78.0" text="退出" />
+                             <Button fx:id="deleteEmpButton" layoutX="573.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="删除员工" />
+                             <Button fx:id="addEmpButton" layoutX="417.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="添加新员工" />
+                             <TableView fx:id="empInfoTable" editable="true" prefHeight="351.0" prefWidth="719.0">
+                                 <columns>
+                                     <TableColumn fx:id="empId" editable="true" prefWidth="127.0" text="员工账号" />
+                                     <TableColumn fx:id="empName" editable="true" prefWidth="140.0" text="员工名称" />
+                                     <TableColumn fx:id="empTitle" editable="true" prefWidth="125.0" text="员工职称" />
+                                     <TableColumn fx:id="empPasswd" editable="true" prefWidth="138.0" text="员工账号密码" />
+                              <TableColumn fx:id="empLastLogin" prefWidth="188.0" text="员工最后登录日期" />
+                                 </columns>
+                             </TableView>
+                             <TextField fx:id="newEmpId" layoutX="13.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="员工账号" />
+                             <TextField fx:id="newEmpName" layoutX="187.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="员工名称" />
+                             <TextField fx:id="newEmpTitle" layoutX="371.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="员工职称" />
+                             <TextField fx:id="newEmpPasswd" layoutX="547.0" layoutY="370.0" prefHeight="30" prefWidth="140.0" promptText="员工账号密码" />
+                        <Button fx:id="modifyEmpButton" layoutX="271.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="修改员工信息" />
+                        <Label fx:id="statusLabel_3" layoutX="11.0" layoutY="461.0" text="&quot;&quot;" />
+                         </children>
+                     </AnchorPane>
+                 </content>
+             </Tab>
+             <Tab fx:id="diaInfoTab" text="日志记录">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                         <children>
+                             <Button fx:id="logoutButton_4" layoutX="61.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="注销" />
+                             <Button fx:id="exitButton_4" layoutX="202.0" layoutY="425.0" prefHeight="30.0" prefWidth="78.0" text="退出" />
+                             <Button fx:id="writeDiaButton" layoutX="373.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="写日志" />
+                             <Button fx:id="deleteDiaButton" layoutX="560.0" layoutY="425.0" prefHeight="30.0" prefWidth="114.0" text="删除日志" />
+                             <TableView fx:id="diaInfoTable" editable="true" prefHeight="351.0" prefWidth="719.0">
+                                 <columns>
+                                     <TableColumn fx:id="diaId" editable="true" prefWidth="52.0" text="日志编号" />
+                                     <TableColumn fx:id="diaCarId" editable="true" prefWidth="84.0" text="汽车车牌号" />
+                                     <TableColumn fx:id="diaCusName" editable="true" prefWidth="64.0" text="客户名称" />
+                                     <TableColumn fx:id="diaEmpName" editable="true" prefWidth="72.0" text="经办人名称" />
+                                     <TableColumn fx:id="diaStime" editable="true" prefWidth="128.0" text="发生时间" />
+                                     <TableColumn fx:id="diaEtime" editable="true" prefWidth="125.0" text="结束时间" />
+                                     <TableColumn fx:id="diaEvent" editable="true" prefWidth="54.0" text="事件" />
+                              <TableColumn fx:id="diaProfit" prefWidth="66.0" text="事件流水" />
+                              <TableColumn fx:id="diaDetail" prefWidth="73.0" text="事件备注" />
+                                 </columns>
+                             </TableView>
+                             <TextField fx:id="newDiaCar" layoutX="13.0" layoutY="370.0" prefHeight="30" prefWidth="100.0" promptText="汽车车牌号" />
+                             <TextField fx:id="newDiaCus" layoutX="139.0" layoutY="370.0" prefHeight="30" prefWidth="100" promptText="客户姓名" />
+                             <TextField fx:id="newDiaEmp" disable="true" editable="false" layoutX="260.0" layoutY="370.0" prefHeight="30" prefWidth="100" promptText="经办人" />
+                             <TextField fx:id="newDiaEvent" layoutX="373.0" layoutY="370.0" prefHeight="30" prefWidth="100" promptText="事件类型" />
+                             <TextField fx:id="newDiaProfit" layoutX="487.0" layoutY="370.0" prefHeight="30" prefWidth="100" promptText="事件流水" />
+                             <TextField fx:id="newDiaDetail" layoutX="597.0" layoutY="370.0" prefHeight="30" prefWidth="100" promptText="事件备注" />
+                        <Label fx:id="statusLabel_4" layoutX="11.0" layoutY="461.0" text="“”" />
+                         </children>
+                     </AnchorPane>
+                 </content>
+             </Tab>
+             <Tab fx:id="charTab" text="查看报表">
+                 <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                     <children>
+                        <LineChart fx:id="lineChart" alternativeColumnFillVisible="true" prefHeight="420.0" prefWidth="719.0" style="-fx-text-fill: white;" title="lineChart" visible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="收入 /元" side="LEFT" tickLabelFill="WHITE" />
+                          </yAxis>
+                        </LineChart>
+                        <Button fx:id="showChartButton" layoutX="654.0" layoutY="427.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="51.0" text="查询" />
+                        <ChoiceBox fx:id="typeChoice" layoutX="76.0" layoutY="427.0" prefHeight="30.0" prefWidth="90.0" value="个人报表">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="个人报表" />
+                                    <String fx:value="车辆报表" />
+                                    <String fx:value="公司报表" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="timeChoice" layoutX="244.0" layoutY="427.0" prefHeight="30.0" prefWidth="83.0" value="日报表">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="日报表" />
+                                    <String fx:value="周报表" />
+                                    <String fx:value="月报表" />
+                                    <String fx:value="年报表" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <Label layoutX="7.0" layoutY="432.0" text="报表类别" textFill="WHITE" />
+                        <Label layoutX="174.0" layoutY="432.0" text="查询时段" textFill="WHITE" />
+                        <Button fx:id="logoutButton_5" layoutX="208.0" layoutY="460.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="注销" />
+                        <Button fx:id="exitButton_5" layoutX="442.0" layoutY="460.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="退出" />
+                        <DatePicker fx:id="sTime" layoutX="387.0" layoutY="427.0" prefHeight="30.0" prefWidth="110.0" />
+                        <DatePicker fx:id="eTime" layoutX="529.0" layoutY="427.0" prefHeight="30.0" prefWidth="110.0" />
+                        <Label layoutX="342.0" layoutY="432.0" text="from" textFill="WHITE" />
+                        <Label layoutX="506.0" layoutY="432.0" text="to" textFill="WHITE" />
+                     </children>
+                     </AnchorPane>
+                 </content>
+             </Tab>
+         </tabs>
+         </TabPane>
+         <Label fx:id="welcomeLabel" layoutX="213.0" layoutY="14.0" text="员工" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

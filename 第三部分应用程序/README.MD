@@ -1,0 +1,1 @@
+新建名为DBLab3的数据库，之后运行dblab3.sql导入数据，最后运行java -jar DBLab3.jar即可。

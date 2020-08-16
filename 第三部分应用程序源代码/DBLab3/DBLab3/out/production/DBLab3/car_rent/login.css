@@ -1,0 +1,10 @@
+.root{
+    display:block;
+}
+.root{
+    -fx-font-family: "微软雅黑";
+    -fx-background-image: url("login.jpg");
+    -fx-background-size: stretch stretch;
+    -fx-background-position: center center;
+}
+
